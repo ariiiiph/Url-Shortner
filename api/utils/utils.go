@@ -1,6 +1,9 @@
 package utils
 
-import "os"
+import (
+	"os"
+	"strings"
+)
 
 func IsDiffrentDomain(url string) bool {
 	domain := os.Getenv("DOMAIN")
@@ -8,4 +11,11 @@ func IsDiffrentDomain(url string) bool {
 	if url == domain {
 		return false
 	}
+
+	cleanURL := strings.TrimPrefix(url, "http://")
+	cleanURL = strings.TrimPrefix(cleanURL, "https://")
+	cleanURL = strings.TrimPrefix(cleanURL, "www.")
+	cleanURL = strings.Split(cleanURL, "/")[0]
+
+	return cleanURL != domain
 }

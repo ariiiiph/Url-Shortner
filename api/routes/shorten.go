@@ -8,6 +8,7 @@ import (
 
 	"github.com/ariiiiph/Url-Shortner/api/database"
 	"github.com/ariiiiph/Url-Shortner/api/models"
+	"github.com/ariiiiph/Url-Shortner/api/utils"
 	"github.com/asaskevich/govalidator"
 	"github.com/gin-gonic/gin"
 )
