@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 
+	"github.com/ariiiiph/Url-Shortner/api/database"
 	"github.com/ariiiiph/Url-Shortner/api/routes"
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
@@ -15,6 +16,8 @@ func main() {
 	if err != nil {
 		fmt.Println(err)
 	}
+
+	database.InitializeClient()
 
 	router := gin.Default()
 
